@@ -1,0 +1,234 @@
+<html>
+
+<head>
+  <title></title>
+  <meta content="">
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+  <style>
+    html,
+    body {
+      overflow: hidden;
+      background-color: #bf737d;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      z-index: 200;
+      position: relative;
+      width: 300px;
+      height: 425px;
+      box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+      background-color: rgb(230, 240, 230);
+    }
+
+    .card .text-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .strikethrough {
+      text-decoration: line-through;
+    }
+
+    .card .text-container #head {
+      font-family: 'Nobile', sans-serif;
+      font-size: 1.5em;
+      margin: 20px auto 15px auto;
+    }
+
+    .card p {
+      font-size: 13px;
+      line-height: 13px ;
+      color: #331717;
+      font-style: italic;
+      text-align: center;
+      margin: 0;
+    }
+
+    .card .front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background-color: rgb(115, 163, 191);
+      background-size: contain;
+      transform-style: preserve-3d;
+      transform-origin: 0% 50%;
+      transform: perspective(800px) rotateY(0deg);
+      transition: all 0.8s ease-in-out;
+    }
+
+
+    .card .front .content .h {
+      padding-left: 10px;
+      position: absolute;
+    }
+
+    .card .front .content .open-btn {
+      position: absolute;
+      bottom: -1px;
+      right: -385px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .card .front .content .open-btn i {
+      font-size: 10px;
+    }
+
+    .card .back .content {
+      position: relative;
+    }
+
+    .card .back .content .open-btn {
+      transform: perspective(800px) rotateY(-170deg);
+      clear: both;
+      position: absolute;
+      top: 385px;
+      right: 5px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .card .back .content .open-btn i {
+      font-size: 10px;
+    }
+
+    .card .front .content {
+      position: relative;
+      font-family: 'Rubik Mono One', sans-serif;
+
+      -webkit-text-stroke: 1px black;
+      color: white;
+      text-shadow:
+        3px 3px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+
+      font-size: 20px;
+
+
+      display: flex;
+      align-content: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .card.open .front {
+      transform: perspective(800px) rotateY(-170deg);
+      background-color: rgb(115-50, 163-50, 191-50);
+    }
+
+    .card.open .back {
+      transform: perspective(800px) rotateY(-170deg);
+      box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+      background-color: rgb(210, 220, 210);
+    }
+
+    .card .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: visible;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .5));
+      transform-style: preserve-3d;
+      transform-origin: 0% 50%;
+      transform: perspective(800px) rotateY(0deg);
+      transition: all 0.8s ease-in-out;
+      background-color: rgb(230, 240, 230);
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="back">
+      <div class="content">
+        <span class="open-btn">&#128536; <br> <i>click</i></span>
+      </div>
+    </div>
+    <div class="front">
+      <div class="content">
+        <h1 class="h">Happy<br>birthday</h1>
+        <img src="test1.jpeg" />
+        <span class="open-btn">&#128536; <br> <i>click</i></span>
+      </div>
+    </div>
+
+    <div class="text-container">
+      <p id="head">Честит Рожден Ден!</p>
+      <p>Ако знаеше колко ми даваш,</p>
+      <p>в този тежък, самотен живот,</p>
+      <p>колко обич в деня ми оставяш,</p>
+      <p>в душите най-ценния плод.</p>
+      <br>
+      <p>Ако знаеше колко си нужна,</p>
+      <p>да те вдишвам със въздуха в мен,</p>
+      <p>да те милвам, когато си тъжна,</p>
+      <p>да си пристан, щом бъда ранен</p>
+      <br>
+      <p>Ако знаеше колко жадувам</p>
+      <p>да те пия на глътки, в екстаз,</p>
+      <p>твоето„Искам те!" нежно да чувам</p>
+      <p>да те топля в най-лютия мраз.</p>
+      <br>
+      <p>Ако знаеше как те обичам,</p>
+      <p>всеки миг с теб е нежен рефрен</p>
+      <p>от любов, на която се вричам</p>
+      <p>да живее завинаги в мен</p>
+      <br>
+      <p>Ако знаеше..., пее сърцето,</p>
+      <p>звън на радост отеква в нощта,</p>
+      <p>и протегнал ръце към небето</p>
+      <p>се кълна в теб, любима жена!</p>
+    </div>
+  </div>
+  <script>
+    var emoji = ['128536', '128525', '127881', '127880', '127874', '127873'];
+    var currentPos = {};
+    (function () {
+      document.querySelectorAll('.open-btn').forEach(el => el.onclick = function () {
+        let b = document.querySelector('.card');
+        b.classList.contains('open') ? b.classList.remove('open') : b.classList.add('open')
+      });
+
+
+      for (let i = 0; i < 70; i++) dis();
+    })();
+
+
+    function dis() {
+      let emojiIndex = Math.floor(Math.random() * emoji.length);
+      let emojiCode = emoji[emojiIndex];
+
+      let span = document.createElement('span');
+      span.innerHTML = `&#${emojiCode};`;
+      span.style.position = 'absolute';
+
+      let pageW = window.innerWidth;
+      let pageH = window.innerHeight;
+
+      let left = null, top = null;
+      left = Math.floor(Math.random() * pageW);
+      top = Math.floor(Math.random() * pageH);
+
+      span.style.top = `${top}px`;
+      span.style.left = `${left}px`;
+      span.style.fontSize = '40px'
+
+
+      document.body.appendChild(span)
+    }
+  </script>
+</body>
+
+</html>
